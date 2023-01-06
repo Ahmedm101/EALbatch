@@ -16,6 +16,7 @@ public class Amazon extends Utilities {
 
 	public static void main(String[] args) throws InterruptedException {
 		Ibrowser("Edge", "https://www.amazon.com/");
+		//task 3 b
 		String UrlofHomepage =driver.getCurrentUrl();
 		String FRSofHomepage="https://www.amazon.com/";
 		if(UrlofHomepage.equalsIgnoreCase(FRSofHomepage)) {
@@ -24,6 +25,7 @@ public class Amazon extends Utilities {
 		else{
 			System.out.println("the url is incorrect");
 		}
+		
 		WebElement Account_and_lists= driver.findElement(By.cssSelector("span[class='nav-line-2 ']"));
 		WebDriverWait exwait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		exwait.until(ExpectedConditions.elementToBeClickable(Account_and_lists));
@@ -59,18 +61,20 @@ public class Amazon extends Utilities {
 	   SearchIcon.click();
 	   driver.switchTo().window(parentwindow);
 	   driver.navigate().refresh();
+	  
 	   WebElement All=   driver.findElement(By.cssSelector("select[id='searchDropdownBox']"));
 	   //All.click();
-	/*   WebDriverWait exwait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
-	   exwait1.until(ExpectedConditions.elementToBeClickable(All));*/
+	   WebDriverWait exwait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+	   exwait1.until(ExpectedConditions.elementToBeClickable(All));
+	   All.click();
 	  WebElement Searchfield1 = driver.findElement(By.xpath("//div[@class='nav-search-field ']/descendant::input"));
 	  Searchfield1.click();
 	  mouse.keyDown(Keys.CONTROL).sendKeys("v").build().perform();
 	  mouse.keyUp(Keys.CONTROL).build().perform();
 	  driver.quit();
 	   
-	    
-		
+	    // create exwait in child window but if you are in same iwndow you odnt have to make explicit wait 
+		// set string you will have to make new after very new window opens 
 		
 
 	}
@@ -78,5 +82,5 @@ public class Amazon extends Utilities {
 	// please check the url string line 20 and 42
 	//pg 84 use desendant xpath you mean the locator will be decendant and take help of class or id from ancestor? line 50
     // what happens when you do test run and so many ss taken that time delete the extra ones
-	//line 61 exwait not working why? i made new exwait here. 
+	
 }

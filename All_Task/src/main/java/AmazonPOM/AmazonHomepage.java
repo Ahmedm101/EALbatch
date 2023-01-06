@@ -10,7 +10,7 @@ import Easy_Automation_Lab.All_Task.Java_Script_Utilities;
 public class AmazonHomepage {
        WebDriver driver;
 	@FindBy(id = "twotabsearchtextbox") WebElement Searchbar;
-	@FindBy(xpath="//div[@id='nav-xshop']/child::a[7]") WebElement Realese;
+	@FindBy(xpath="(//a[text()='New Releases'])[1]") WebElement Realese;
 	@FindBy(css="#nav-search-submit-button") WebElement SearchIcon;
 	public void sendkeysonSearchbar(String item) {
 		Java_Script_Utilities.drawBorder(driver, Searchbar);
@@ -19,13 +19,14 @@ public class AmazonHomepage {
 		Searchbar.sendKeys(item);
 	}
 	public void Realeaseclick() {
-		Java_Script_Utilities.jsClick(driver, Realese);
+		
 		Java_Script_Utilities.drawBorder(driver, Realese);
-		Realese.click();
+		Java_Script_Utilities.jsClick(driver, Realese);
+		
 	}
 	public void Searchiconclick() {
 		Java_Script_Utilities.jsClick(driver, SearchIcon);
-		SearchIcon.click();
+		
 	}
 	public AmazonHomepage(WebDriver driver) {
 		this.driver= driver;

@@ -10,9 +10,10 @@ import UtilitiesPack.UtilitiesTestNG;
 
 public class Amazon2 extends UtilitiesTestNG {
   @Test(priority=1)
-  public void f() {
+  public void f() throws InterruptedException {
 	  AmazonHomepage ob = new AmazonHomepage(driver);
 	  ob.sendkeysonSearchbar("computer");
+	  Thread.sleep(3000);
 	  ob.Realeaseclick(); 
 	  
 	  NewRealesespage rp = new NewRealesespage(driver);

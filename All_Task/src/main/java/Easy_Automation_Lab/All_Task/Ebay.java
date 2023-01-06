@@ -32,7 +32,9 @@ public class Ebay extends Utilities {
 	   WebElement myEbay=	driver.findElement(By.xpath("(//div[@class='gh-menu']/child::a[@class='gh-eb-li-a gh-rvi-menu'])[1]"));
 	   Actions mouse = new Actions(driver);
 	   mouse.moveToElement(myEbay).build().perform();
-	   Screenshot("\\Screenshots\\Ebay\\");
+	   Thread.sleep(2000);
+	//   Screenshots("Ebay");
+	//   Thread.sleep(2000);
 	   WebElement Summary= driver.findElement(By.xpath("(//ul[@id='gh-ul-nav']/descendant::a)[1]"));
 	   mouse.moveToElement(Summary).click().build().perform();
 	   String UrlofSignInpage = driver.getCurrentUrl();
@@ -57,8 +59,9 @@ public class Ebay extends Utilities {
 	   WebElement Motors =driver.findElement(By.xpath("(//h3[@class='gh-sbc-parent']/child::a)[1]"));
 	   mouse.moveToElement(Motors).build().perform();
 	   mouse.keyDown(Keys.SHIFT).click().build().perform();
-	   mouse.keyUp(Keys.SHIFT);
-	   Screenshot("\\Screenshots\\Ebay\\");
+	   Thread.sleep(2000);
+	   mouse.keyUp(Keys.SHIFT).build().perform();
+	//   Screenshots("Ebay");
 	   Set<String>SessionIDs =driver.getWindowHandles();
 	   Iterator<String> it = SessionIDs.iterator();
 	   String window1 =it.next();
@@ -86,7 +89,7 @@ public class Ebay extends Utilities {
 	   System.out.println(window1);
 	   System.out.println(window2);
 	   driver.navigate().refresh();
-	   driver.close();
+/*	   driver.close();
 	   driver.switchTo().window(window2);
 	   driver.close();
 	   driver.switchTo().window(window1);

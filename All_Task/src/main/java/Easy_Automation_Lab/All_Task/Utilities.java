@@ -15,6 +15,7 @@ import org.openqa.selenium.io.FileHandler;
 
 public class Utilities {
 	   public static WebDriver driver;
+	   
 	public static void Ibrowser(String NameOftheBrowser, String Url) {
 	String UD=	 System.getProperty("user.dir");
 	System.setProperty("webdriver.chrome.driver",UD+"\\Drivers\\chromedriver.exe" );
@@ -35,15 +36,8 @@ public class Utilities {
 	}
 	
 	}
-	public static void Screenshot(String folder) throws IOException {
-		String UD= System.getProperty("user.dir");
-		Date dateformat = new Date();
-		String DATE = dateformat.toString().replace(":", "_").replace(" ", "_");
-		File SS =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	
 		
-			FileHandler.copy(SS,new File(UD+folder+DATE+"all_ss.jpg"));
-		
-		}
 	public static void Screenshots() {
 		String UD=System.getProperty("user.dir");
 		Date Dateformat = new Date();
@@ -51,26 +45,15 @@ public class Utilities {
 		
 		File SS =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileHandler.copy(SS,new File(UD+"\\Screenshots\\Amazon\\"+DATE+"all_ss.jpg"));
+			FileHandler.copy(SS,new File(UD+"\\Screenshots\\Ebay\\"+DATE+"Ebay.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	public static void Screenshot() {
-		String UD =System.getProperty("user.dir");
-		Date Dateformat = new Date();
-	String DATE=	Dateformat.toString().replace(":", "_").replace(" ", "_");
-		File SS =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try {
-			FileHandler.copy(SS,new File(UD+"\\Screenshots\\PizzaHut\\"+DATE+"all_ss.jpg"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 	}
-		// the name all_ss.jpg can we keep same name for all screenshot method ?
 		
-	}
+	
 
 

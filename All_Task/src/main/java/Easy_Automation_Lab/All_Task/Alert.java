@@ -29,9 +29,7 @@ public class Alert extends Utilities{
 	   Thread.sleep(3000);
 	    WebElement Alert2 = driver.findElement(By.cssSelector("button[id='confirmBox']"));
 	   Alert2.click();
-	   Thread.sleep(2000);
-	   Screenshot();
-	   Thread.sleep(3000);
+	 
 	    driver.switchTo().alert().accept();
 	    Screenshot();
 	    Thread.sleep(3000);
@@ -49,10 +47,8 @@ public class Alert extends Utilities{
 	   driver.close();
 		
 		
-		/* i had to use here thread nahole hochilona, so in work sometimes i need to use thread or do explicit 
-	   /screenshot add korle aletrs gula hochena error dhow kortesa, so for work when do we take ss for alert. i wanted to take ss that alert box pop
-	   poped up so how we do it ?*/
-
+		//* i had to use here thread nahole hochilona, so in work sometimes i need to use thread or do explicit 
+	  
 	}
 	public static void Screenshot() {
 	String UD=	System.getProperty("user.dir");

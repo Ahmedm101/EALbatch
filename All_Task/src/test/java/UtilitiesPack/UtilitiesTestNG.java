@@ -15,20 +15,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 
-public class UtilitiesTestNG {
-	
-    public WebDriver driver;
+public class UtilitiesTestNG {  // the ibrowser and SS method is non static here whould we make it static 
+	                            // testng -- we can call non static method to different class and package
+    public static WebDriver driver;
   
   @BeforeClass
   public void beforeClass() {
-	  Ibrowser("chrome","https://www.amazon.com");
+	  Ibrowser("chrome","https://www.ebay.com/");
 	  
   }
 
+  @AfterMethod
+  public void aftermethod() throws IOException {
+	  Screenshot();
+  }
   @AfterClass
-  public void afterClass() throws IOException {
-	  Screenshot("//Screenshots//Amazon//");
+  public void afterclass() {
+	  driver.quit();
+	  
   }
   public void Ibrowser(String NameOftheBrowser, String Url) {
 		String UD=	 System.getProperty("user.dir");
@@ -49,12 +55,17 @@ public class UtilitiesTestNG {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 	}
-  public void Screenshot(String folder) throws IOException {
-		String UD= System.getProperty("user.dir");
-		Date dateformat = new Date();
-		String DATE = dateformat.toString().replace(":", "_").replace(" ", "_");
-		File SS =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 
+  public void Screenshot() throws IOException {
+	  String UD=System.getProperty("user.dir");
+		Date Dateformat = new Date();
+		String DATE =Dateformat.toString().replace(":","_").replace(" ","_");
 		
-			FileHandler.copy(SS,new File(UD+folder+DATE+"all_ss.jpg"));
+		File SS =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileHandler.copy(SS,new File(UD+"\\Screenshots\\Ebay\\"+DATE+"Ebay.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
   }
+}
 }

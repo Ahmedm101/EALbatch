@@ -41,15 +41,15 @@ public class Amazon_Task4 extends Utilities {
 	   WebDriverWait exwait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	   exwait.until(ExpectedConditions.elementToBeClickable(AccountandLists));
 	   Java_Script_Utilities.drawBorder(driver, AccountandLists);
-	   Screenshot("\\Screenshots\\Amazon\\");
+	//   Screenshot("\\Screenshots\\Amazon\\");
 	   Actions mouse= new Actions(driver);
 	   mouse.moveToElement(AccountandLists).build().perform();
 	   WebElement Selling =driver.findElement(By.xpath("(//a[@class='nav-link nav-item']/child::span)[17]"));
 	   exwait.until(ExpectedConditions.elementToBeClickable(Selling));
-	   Java_Script_Utilities.flash(Selling, driver);
+	//   Java_Script_Utilities.flash(Selling, driver);
 	   Thread.sleep(3000);
 	   Java_Script_Utilities.drawBorder(driver, Selling);
-	   Screenshot("\\Screenshots\\Amazon\\");
+	//   Screenshot("\\Screenshots\\Amazon\\");
 	   mouse.moveToElement(Selling).keyDown(Keys.SHIFT).click().build().perform();
 	   mouse.keyUp(Keys.SHIFT).build().perform();
 	    SessionID =driver.getWindowHandles();
@@ -72,7 +72,7 @@ public class Amazon_Task4 extends Utilities {
 	  Java_Script_Utilities.drawBorder(driver, Searchfield);
 	  Searchfield.click();
 	  Searchfield.sendKeys("phone");
-	  Screenshot("\\Screenshots\\Amazon\\");
+//	  Screenshot("\\Screenshots\\Amazon\\");
 	  mouse.keyDown(Keys.CONTROL).sendKeys("a").build().perform();
 	  mouse.keyDown(Keys.CONTROL).sendKeys("c").build().perform();
 	  mouse.keyUp(Keys.CONTROL).build().perform();
@@ -97,9 +97,9 @@ public class Amazon_Task4 extends Utilities {
 	  WebElement MotoG= driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[16]"));
 	  Java_Script_Utilities.scrollIntoView(driver, MotoG);
 	  Java_Script_Utilities.drawBorder(driver, MotoG);
-	  Screenshot("\\Screenshots\\Amazon\\");
+	//  Screenshot("\\Screenshots\\Amazon\\");
 	  Java_Script_Utilities.scrollPageDown(driver);
-	  Screenshot("\\Screenshots\\Amazon\\");
+	//  Screenshot("\\Screenshots\\Amazon\\");
 	  String UrlofPhonepage =driver.getCurrentUrl();
 	  String FRSforUrlofPhonepage="https://www.amazon.com/s?k=phone&crid=39BQBBL0DFIV9&sprefix=phone%2Caps%2C160&ref=nb_sb_noss_1";
 	  if(UrlofPhonepage.equalsIgnoreCase(FRSforUrlofPhonepage)) {
@@ -109,10 +109,10 @@ public class Amazon_Task4 extends Utilities {
 		  System.out.println("the url is incorrect");
 	  }
 	  Thread.sleep(3000);
-	/*  Java_Script_Utilities.generateAlert(driver,"You're on Amazon");
-	  Screenshot("\\Screenshots\\Amazon\\");
+	  Java_Script_Utilities.generateAlert(driver,"You're on Amazon");
+	//  Screenshot("\\Screenshots\\Amazon\\");
 	  Thread.sleep(2000);
-	 driver.switchTo().alert().accept(); */
+	 driver.switchTo().alert().accept(); 
 	  driver.navigate().back();
 	  driver.switchTo().window(window1);
 	  driver.navigate().refresh();
@@ -140,7 +140,7 @@ public class Amazon_Task4 extends Utilities {
 	   WebElement Firespray =  driver.findElement(By.xpath("//div[@id='B0BCHJ8JL3']"));
 	   Java_Script_Utilities.scrollIntoView(driver, Firespray);
 	   Java_Script_Utilities.drawBorder(driver, Firespray);
-	   Screenshot("\\Screenshots\\Amazon\\");
+	//   Screenshot("\\Screenshots\\Amazon\\");
 	   driver.quit();
 	   
 	   

@@ -8,44 +8,44 @@ public class Pizza_Hut extends Utilities {
 
 	public static void main(String[] args) throws InterruptedException {
 		Ibrowser("chrome", "https://www.pizzahut.com");
-		Screenshot();
+	//	Screenshot();
 	    WebElement Menu=	driver.findElement(By.cssSelector("span[class='MuiButton-label']"));
 	    Menu.click();
-	    Screenshot();
-	/*    WebElement TripleTreatBox=  driver.findElement(By.cssSelector("img[class='jss90 false']"));
+	//    Screenshot();
+	   WebElement TripleTreatBox=  driver.findElement(By.cssSelector("img[class='jss90 false']"));
 	    TripleTreatBox.click();
 	    Thread.sleep(3000);
-	/*    Java_Script_Utilities.jsClick(driver, Menu);
+	   Java_Script_Utilities.jsClick(driver, Menu);
 	    Menu.click();
 	    WebElement cross= driver.findElement(By.cssSelector("mask[id='close-icon-b-6']~g>path"));
 	    cross.click();
-	    Menu.click(); */
+	    Menu.click(); 
 	   WebElement pizza=   driver.findElement(By.xpath("(//ul[@id='menu-list-grow']/descendant::a/div)[1]"));
 	   pizza.click();
 	   Thread.sleep(2000);
-	   Screenshot();
+	//   Screenshot();
 	  WebElement Peparonni=  driver.findElement(By.xpath("(//a[@class='btn btn-primary btnModal'])[1]"));
 	  Peparonni.click();  
 	  Thread.sleep(2000);
-	  Screenshot();
+	//  Screenshot();
 	  driver.navigate().back();
 	  Thread.sleep(2000);
 	  WebElement Backyard =  driver.findElement(By.xpath("(//a[@class='btn btn-primary btnModal'])[8]"));
 	  Java_Script_Utilities.scrollIntoView(driver, Backyard);
-	  Screenshot();
+//	  Screenshot();
 	  Thread.sleep(2000);
 	  Backyard.click();
 	  Thread.sleep(2000);
-	  Screenshot();
+	//  Screenshot();
 	  driver.navigate().back();
 	  driver.navigate().back();
-	  Screenshot();
-	  WebElement TripleTreatBox=  driver.findElement(By.cssSelector("img[class='jss90 false']"));
+	//  Screenshot();
+	//  WebElement TripleTreatBox=  driver.findElement(By.cssSelector("img[class='jss90 false']"));
 	    TripleTreatBox.click();
-	    Screenshot();
+	//    Screenshot();
 	  WebElement delivery=  driver.findElement(By.xpath("(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-justify-content-xs-center'])[3]"));
 	  delivery.click();
-	  Screenshot();
+	//  Screenshot();
 	  WebElement address=  driver.findElement(By.cssSelector("input[id='w2-address']"));
 	  address.click();
 	  address.sendKeys("7519 longbow ln");
@@ -61,20 +61,20 @@ public class Pizza_Hut extends Utilities {
 	  WebElement zipcode=  driver.findElement(By.xpath("//input[@id='w2-zip']"));
 	  zipcode.click();
 	  zipcode.sendKeys("76002");
-	  Screenshot();
+//	  Screenshot();
 	  WebElement Search= driver.findElement(By.xpath("(//span[@class='MuiButton-label'])[3]"));
 	  Search.click();
-	  Screenshot();
+//	  Screenshot();
 	 WebElement Continue =  driver.findElement(By.xpath("//span[@class='jss263']"));
 	 Continue.click();
 	 Thread.sleep(2000);
-	 Screenshot();
+	// Screenshot();
 	 WebElement Alert = driver.findElement(By.cssSelector("#modal-button-OK"));
 	 Alert.click();
-	 Screenshot();
+	// Screenshot();
 	 Java_Script_Utilities.scrollPageDown(driver);
-	 Screenshot();
-	 driver.close();
+	// Screenshot();
+	driver.close();
 	 
 	  
 

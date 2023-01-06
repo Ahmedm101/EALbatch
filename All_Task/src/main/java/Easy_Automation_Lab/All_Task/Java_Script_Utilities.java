@@ -34,13 +34,30 @@ public class Java_Script_Utilities {
 	
 	}
 	//BLUE
-	public static void flash(WebElement element,WebDriver driver) {
+	public static void flash_blue(WebElement element,WebDriver driver) {
 		String bgcolor=element.getCssValue("backgroundColor");
 		System.out.println(bgcolor);
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<5;i++) {
 			changeColor("#0000FF", element, driver);
 			changeColor(bgcolor, element, driver);
-		}
+		}}
+	
+	//red
+		public static void flash_red(WebElement element,WebDriver driver) {
+			String bgcolor=element.getCssValue("backgroundColor");
+			System.out.println(bgcolor);
+			for(int i=0;i<5;i++) {
+				changeColor("#FF0000", element, driver);
+				changeColor(bgcolor, element, driver);
+			}}
+	//White
+			public static void flash_white(WebElement element,WebDriver driver) {
+				String bgcolor=element.getCssValue("backgroundColor");
+				System.out.println(bgcolor);
+				for(int i=0;i<5;i++) {
+					changeColor("#FFFFFF", element, driver);
+					changeColor(bgcolor, element, driver);
+				}
 		
 	}
 	public static void drawBorder(WebDriver driver, WebElement element) {
@@ -51,5 +68,6 @@ public class Java_Script_Utilities {
 		JavascriptExecutor jsexecutor = (JavascriptExecutor)driver;
 		jsexecutor.executeScript("alert('"+message+"')");
 		
-	} 
+	
+}
 }
