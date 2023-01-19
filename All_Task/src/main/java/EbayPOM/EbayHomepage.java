@@ -21,6 +21,7 @@ public class EbayHomepage { // we cannot call method from src test class
 	WebDriver driver;
 	Actions mouse;
 	
+	
 	@FindBy(xpath="(//div[@class='gh-menu']/child::a)[1]") WebElement MyEbay;
 	@FindBy(xpath="//a[text()=' Summary']") WebElement Summary;
 	@FindBy(xpath ="//div[@id='gh-cat-box']/child::select") WebElement AllCategories;
@@ -38,7 +39,7 @@ public class EbayHomepage { // we cannot call method from src test class
 		Java_Script_Utilities.flash_white(MyEbay, driver);
 	//h	
 		Java_Script_Utilities.drawBorder(driver, MyEbay);
-	   // Utilities.Screenshots();
+	   // Utilities.Screenshots("Ebay");
 	//i	
 		mouse = new Actions(driver); ;
 	    mouse.moveToElement(MyEbay).build().perform();

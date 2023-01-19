@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Suite">
+  <test thread-count="6" parallel="classes" name="Test1,2,3 parallely run">
+    <classes>
+      <class name="ProdLevel.Test1"/>
+      <class name="ProdLevel.Test2"/>
+      <class name="ProdLevel.Test3"/>
+    </classes>
+  </test> <!-- Test1,2,3 parallely run -->
+</suite> <!-- Suite -->
+  <!--  what will be the test name
+    at work we always run the classes how about methods 
+    location will change after \
+    when we are running at classes its not coming sequencely like test 1,2,3-->
+    

@@ -1,6 +1,7 @@
 package EbayTestNG;
 
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import Easy_Automation_Lab.All_Task.Java_Script_Utilities;
 import EbayPOM.EbayHomepage;
@@ -15,6 +16,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make object in order to call method from other class also from different package
@@ -27,18 +29,14 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
 	  //f
 	  String UrlofHomepage= driver.getCurrentUrl();
 	  String FrsUrlofHomepage ="https://www.ebay.com/";
-	  if(UrlofHomepage.equalsIgnoreCase(FrsUrlofHomepage)) {
-		  System.out.println("the url is correct");
-	  }
-	  else {
-		  System.out.println("the url is incorrect");
-	  }
+	  SoftAssert ob = new SoftAssert();
+	 ob.assertEquals(UrlofHomepage, FrsUrlofHomepage); // if assert fails i know the execution will happen but fail report will be shown but how about test 2 and 3 as they are dependant so will they be skipped or executed?
 	  EbayHomepage hp = new EbayHomepage(driver);
 	  hp.MyEbayclick();
-	  Screenshot();// we can call non static method here and screenshot is taking here
+	  Screenshot("Ebay");// we can call non static method here and screenshot is taking here
 	  hp.SummaryClick();
 	  Thread.sleep(2000);
-	  Screenshot(); // screenshot is taking here of the summary page ? how we will take the border screenshot 
+	  Screenshot("Ebay"); // screenshot is taking here of the summary page ? how we will take the border screenshot 
 	  //l
 	  String UrlofSummarypage = driver.getCurrentUrl();
 	  String FrsUrlofSummarypage ="https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&ru=https%3A%2F%2Fwww.ebay.com%2Fmye%2Fmyebay%2Fsummary";
@@ -46,10 +44,11 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
 		  System.out.println("the url is correct");
 	  }
 	  else {
-		 Screenshot();  // i put a ss here is it ok 
+		 Screenshot("Ebay");  // i put a ss here is it ok 
 	  }
 	  //m
 	  driver.navigate().back();
+	  ob.assertAll();
 	  }
       
      @Test(priority =2, dependsOnMethods="Test1")
@@ -64,13 +63,13 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
     	 }
     	 hp.AllCategoriesClick();
     	 Thread.sleep(2000);
-    	 Screenshot();  //ss keno nichena at the folder
+    	 Screenshot("Ebay");  //ss keno nichena at the folder
     	 //s
     	 Java_Script_Utilities.scrollPageDown(driver);
-    	 Screenshot();
+    	 Screenshot("Ebay");
     	 hp.SearchFieldClick();
     	 Thread.sleep(3000);
-    	 Screenshot();
+    	 Screenshot("Ebay");
     	 hp.SearchFieldClick();
     	 //u
     	 String UrlofHomepage=driver.getCurrentUrl();
@@ -79,7 +78,7 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
     		 System.out.println("the url is correct");
     	 }
     	 else {
-    		 Screenshot();
+    		 Screenshot("Ebay");
     		  }	 
      }
      @Test( priority =3, dependsOnMethods= "Test2")
@@ -88,13 +87,13 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
     	 hp.ShopbyCategoryClick();
     	 hp.MotorClick();
     	 //y
-    	 Screenshot();
+    	 Screenshot("Ebay");
     	 Set<String> SessionIDs = driver.getWindowHandles();
     	 Iterator<String> it =SessionIDs.iterator();
     	 String ParentWindow = it.next();
     	 String ChildWindow = it.next();
     	 driver.switchTo().window(ChildWindow);
-    	 Screenshot();
+    	 Screenshot("Ebay");
     	 MotorPage mp = new MotorPage(driver);
     	 mp.RegisterClick();
     	 //aa
@@ -104,7 +103,7 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
     	 rp.EmailSendkeys();
     	 rp.PasswordSendkeys();
     	 //bb
-    	 Screenshot();
+    	 Screenshot("Ebay");
     	 rp.CreateAccount();
     	 //ee
     	 System.out.println(ParentWindow);
@@ -118,8 +117,7 @@ public class Sprint1 extends UtilitiesTestNG {   // so we dont have to make obje
     	 
     	 //so here we did afterclass for the quit. how about when we want to close the windows individually ??
     	 //what happends when we need to do the click again but without flashing or anything so i make the method 2() at POM??
-    	 // please check all the SS in ebay folder 
-    	 // there shpuld be 11 SS including the after method which is the ss of all the test why there is only 9 in the folder??
+    	 
      }
 
 }

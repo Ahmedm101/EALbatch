@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression" parallel="tests" thread-count="5"   >
+
+
+
+
+<test name="All_task_Ebay Maligha">
+<parameter name="Browser" value="chrome"></parameter>
+<parameter name="Urladdress" value="https://www.ebay.com/"></parameter>
+<classes>
+<class name="EbayTestNG.Sprint1"></class>
+</classes>
+</test>
+
+<!-- <test name="All_task_Ebay test in Edge">
+<parameter name="Browser" value="edge"></parameter>
+<parameter name="Urladdress" value="https://www.ebay.com/"></parameter>
+<classes>
+<class name="EbayTestNG.Sprint1"></class>
+</classes>
+</test>-->
+
+
+
+
+
+
+
+</suite>
+<!--suite level single test is not running  -->
+<!-- when running multiple test parallel hochena as in working in edge but not chrome -->
+<!-- show the ss for the xpath and the text path-->
+<!-- its not running perfectly at all, sometime showing data page, sometimes text path not working sometimes nothing running why is that -->

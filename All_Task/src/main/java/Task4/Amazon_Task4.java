@@ -152,14 +152,12 @@ public class Amazon_Task4 extends Utilities {
 	   
 
 	}
-	//line 42. should i move to element build perform then do line 43? or can we do do direct move to element and shift.
-    //line 37 css selector didn't work cani show demo and see if i am wrong here ?
-	//line 41 shoudl we print the colors from java script method for bg color
+	
 	//line 61-63 only how many buttons no need to print any text,id or whatsoever
 	//in general for css or xpath can we do only input[id] or we will have to do input[id][name] to make it unique?
 	//line 86 why not alllink it shows error. why we will have to do links,can you please explain this 84-88
 	//line 104, how about if we have to generate both ok and cancel for alert also with messages ?
-	//line 116 does exwait works for select tag ?
+	
 	//line 134 if the 2nd window was closed so it would have been window1 and window 2 right ?
 }
 

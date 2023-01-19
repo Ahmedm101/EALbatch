@@ -6,6 +6,7 @@ import AmazonPOM.AmazonHomepage;
 import AmazonPOM.Giftpage;
 import AmazonPOM.Movies_and_TVpage;
 import AmazonPOM.NewRealesespage;
+
 import UtilitiesPack.UtilitiesTestNG;
 
 public class Amazon2 extends UtilitiesTestNG {

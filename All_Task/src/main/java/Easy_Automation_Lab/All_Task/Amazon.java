@@ -31,7 +31,7 @@ public class Amazon extends Utilities {
 		exwait.until(ExpectedConditions.elementToBeClickable(Account_and_lists));
 		Actions mouse=new Actions(driver);
 		mouse.moveToElement(Account_and_lists).build().perform();
-		Screenshots();
+	//	Screenshots();
 		WebElement SellingAccount = driver.findElement(By.xpath("(//a[@class='nav-link nav-item']/child::span)[17]"));
 		exwait.until(ExpectedConditions.elementToBeClickable(SellingAccount));
 		mouse.moveToElement(SellingAccount).build().perform();
